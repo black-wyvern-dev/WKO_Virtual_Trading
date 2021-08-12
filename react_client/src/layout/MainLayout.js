@@ -1,17 +1,18 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import { experimentalStyled } from '@material-ui/core';
-import MainNavbar from './MainNavbar';
-
-
+import Header from './Header';
+import Navbar from './Navbar';
+import Footer from './Footer';
 import store from 'src/store';
+import { width } from '@material-ui/system';
 
 const MainLayoutRoot = experimentalStyled('div')(
   ({ theme }) => ({
-    // backgroundColor: theme.palette.background.paper,
-    display: 'flex',
+    background: 'rgb(32,32,32)',
     height: '100%',
-    overflow: 'hidden',
-    width: '100%'
+    overflow: 'auto',
+    width: '100%',
+    margin: 'auto',
   })
 );
 
@@ -19,20 +20,18 @@ const MainLayoutWrapper = experimentalStyled('div')({
   display: 'flex',
   flex: '1 1 auto',
   overflow: 'hidden',
-  paddingTop: window.location.pathname == "/" ? 0 : 64,
+  marginTop: '300px',
 });
 
 const MainLayoutContainer = experimentalStyled('div')({
   display: 'flex',
   flex: '1 1 auto',
-  overflow: 'hidden'
+  overflow: 'hidden',  
 });
 
 const MainLayoutContent = experimentalStyled('div')({
   flex: '1 1 auto',
   height: '100%',
-  backgroundImage: 'url(./light-purple-04.jpg)',
-  backgroundSize: 'cover',
   overflow: 'auto'
 });
 
@@ -41,16 +40,17 @@ const MainLayout = ({is_busy}) => {
         return ("Loading")
     } else {
         return (
-        <MainLayoutRoot>
-            
-          { window.location.pathname == "/" ? "" : <MainNavbar /> }
-            <MainLayoutWrapper>
+        <MainLayoutRoot>            
+          <Header />
+          <Navbar />
+          <MainLayoutWrapper>
             <MainLayoutContainer>
                 <MainLayoutContent>
-                <Outlet />
+                  <Outlet />
                 </MainLayoutContent>
             </MainLayoutContainer>
-            </MainLayoutWrapper>
+          </MainLayoutWrapper>
+          <Footer />
         </MainLayoutRoot>
         );
     }

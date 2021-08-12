@@ -22,7 +22,7 @@ const Register = () => {
   return (
     <>
       <Helmet>
-        <title>サインアップ</title>
+        <title>Sign up</title>
       </Helmet>
       <Box
         sx={{
@@ -43,10 +43,10 @@ const Register = () => {
             }}
             validationSchema={
               Yup.object().shape({
-                email: Yup.string().email('有効なメールアドレスである必要があります').max(255).required('メールが必要です'),
-                nickname: Yup.string().max(255).required('ニックネームが必要です'),
-                password: Yup.string().max(255).required('パスワードが必要です'),
-                policy: Yup.boolean().oneOf([true], 'このフィールドをチェックする必要がありますThis field must be checked')
+                email: Yup.string().email('Must be a valid email address').max(255).required('email required'),
+                nickname: Yup.string().max(255).required('nickname required'),
+                password: Yup.string().max(255).required('Password required'),
+                policy: Yup.boolean().oneOf([true], 'This field must be checked')
               })
             }
             onSubmit={(data) => {
@@ -70,21 +70,21 @@ const Register = () => {
                     color="textPrimary"
                     variant="h2"
                   >
-                    新しいアカウントを作成する
+                    Create a new account
                   </Typography>
                   <Typography
                     color="textSecondary"
                     gutterBottom
                     variant="body2"
                   >
-                    メールを使用して新しいアカウントを作成します
+                    Create a new account using email
                   </Typography>
                 </Box>
                 <TextField
                   error={Boolean(touched.nickname && errors.nickname)}
                   fullWidth
                   helperText={touched.nickname && errors.nickname}
-                  label="ニックネーム"
+                  label="nickname"
                   margin="normal"
                   name="nickname"
                   onBlur={handleBlur}
@@ -96,7 +96,7 @@ const Register = () => {
                   error={Boolean(touched.email && errors.email)}
                   fullWidth
                   helperText={touched.email && errors.email}
-                  label="電子メールアドレス"
+                  label="e-mail address"
                   margin="normal"
                   name="email"
                   onBlur={handleBlur}
@@ -109,7 +109,7 @@ const Register = () => {
                   error={Boolean(touched.password && errors.password)}
                   fullWidth
                   helperText={touched.password && errors.password}
-                  label="パスワード"
+                  label="password"
                   margin="normal"
                   name="password"
                   onBlur={handleBlur}
@@ -141,10 +141,10 @@ const Register = () => {
                       underline="always"
                       variant="h6"
                     >
-                      規約と条件
+                      terms and conditions
                     </Link>
                     {' '}
-                    同意する場合はチェック
+                     Check if you agree
                   </Typography>
                 </Box>
                 {Boolean(touched.policy && errors.policy) && (
@@ -161,21 +161,21 @@ const Register = () => {
                     type="submit"
                     variant="contained"
                   >
-                    今すぐサインアップ
+                    Sign up now
                   </Button>
                 </Box>
                 <Typography
                   color="textSecondary"
                   variant="body1"
                 >
-                  アカウントを持っています？
+                  Do you have an account?
                   {' '}
                   <Link
                     component={RouterLink}
                     to="/login"
                     variant="h6"
                   >
-                    サインイン
+                    Sign in
                   </Link>
                 </Typography>
               </form>

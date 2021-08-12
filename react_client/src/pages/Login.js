@@ -22,7 +22,7 @@ class Login extends Component {
     return (
       <>
         <Helmet>
-          <title>ログイン</title>
+          <title>LOG IN</title>
         </Helmet>
         <Box
           sx={{
@@ -40,8 +40,8 @@ class Login extends Component {
                 password: store.getState().auth.user.password,
               }}
               validationSchema={Yup.object().shape({
-                email: Yup.string().email('有効なメールアドレスである必要があります').max(255).required('メールが必要です'),
-                password: Yup.string().max(255).required('パスワードが必要です')
+                email: Yup.string().email('Must be a valid email address').max(255).required('requires an email'),
+                password: Yup.string().max(255).required('Password required')
               })}
               onSubmit={(data) => {
                 doLogin(store.dispatch, navigate, data);
@@ -63,21 +63,21 @@ class Login extends Component {
                       color="textPrimary"
                       variant="h2"
                     >
-                      サインイン
+                      Sign in
                     </Typography>
                     <Typography
                       color="textSecondary"
                       gutterBottom
                       variant="body2"
                     >
-                      内部プラットフォームにサインインします
+                      Sign in to the internal platform
                     </Typography>
                   </Box>
                   <TextField
                     error={Boolean(touched.email && errors.email)}
                     fullWidth
                     helperText={touched.email && errors.email}
-                    label="電子メールアドレス"
+                    label="e-mail address"
                     margin="normal"
                     name="email"
                     onBlur={handleBlur}
@@ -90,7 +90,7 @@ class Login extends Component {
                     error={Boolean(touched.password && errors.password)}
                     fullWidth
                     helperText={touched.password && errors.password}
-                    label="パスワード"
+                    label="password"
                     margin="normal"
                     name="password"
                     onBlur={handleBlur}
@@ -108,21 +108,21 @@ class Login extends Component {
                       type="submit"
                       variant="contained"
                     >
-                      今すぐサインイン
+                      Sign in now
                     </Button>
                   </Box>
                   <Typography
                     color="textSecondary"
                     variant="body1"
                   >
-                    アカウントをお持ちではありませんか？
+                    Do you have an account?
                     {' '}
                     <Link
                       component={RouterLink}
                       to="/register"
                       variant="h6"
                     >
-                      サインアップ
+                      sign up
                     </Link>
                   </Typography>
                 </form>

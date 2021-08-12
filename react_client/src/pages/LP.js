@@ -14,7 +14,7 @@ const LP = () => {
   return (
     <>
       <Helmet>
-        <title>LP</title>
+        <title>WKO 100</title>
       </Helmet>
       <Box
         sx={{
