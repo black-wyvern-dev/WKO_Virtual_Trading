@@ -13,6 +13,7 @@ const theme = createTheme({
       white: '#FFF',
       red: 'rgb(116,0,0)',
       darkblue: 'rgb(19,79,92)',
+      lightblue: 'rgb(69,129,142)',
       paper: colors.common.white
     },
     primary: {
