@@ -1,4 +1,5 @@
-export const BASE_API_URL = "http://localhost:8000/";
+// export const BASE_API_URL = "http://localhost:8000/";
+export const BASE_API_URL = "http://192.168.114.105:8000/";
 
 export const ROLE_A = 1023
 export const ROLE_B = 7

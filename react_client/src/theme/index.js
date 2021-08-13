@@ -12,17 +12,23 @@ const theme = createTheme({
       black: '#000',
       white: '#FFF',
       red: 'rgb(116,0,0)',
+      lightblue: 'rgb(0,201,201)',
       darkblue: 'rgb(19,79,92)',
       paper: colors.common.white
     },
     primary: {
       contrastText: '#ffffff',
-      main: '#5664d2'
+      main: 'rgb(0,201,201)'
     },
     text: {
       primary: 'rgb(0,201,201)',
       secondary: '#6b778c',
       white: '#FFF',
+      black: '#000',
+    },
+    border: {
+      default: 'rgb(32,32,32)',
+      lightgray: 'rgb(82,82,82)',
     }
   },
   shadows,
