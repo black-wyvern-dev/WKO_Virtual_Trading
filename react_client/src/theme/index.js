@@ -14,6 +14,7 @@ const theme = createTheme({
       red: 'rgb(116,0,0)',
       lightblue: 'rgb(0,201,201)',
       darkblue: 'rgb(19,79,92)',
+      lightblue: 'rgb(69,129,142)',
       paper: colors.common.white
     },
     primary: {
