@@ -92,7 +92,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'djongo', # 'django.db.backends.sqlite3',
         'NAME': 'WKO_DB', # os.path.join(BASE_DIR, 'db.sqlite3'),
-        
+
         'ENFORCE_SCHEMA': False,
         'CLIENT': {
             'host': 'mongodb+srv://admin:%21QAZxsw2@puzzle.am9gf.mongodb.net/WKO_DB?retryWrites=true&w=majority',
@@ -161,4 +161,5 @@ CORS_ORIGIN_WHITELIST = (
     'http://localhost:8081',
     'http://localhost:8000',
     'http://localhost:3000',
+    'http://quizpuzzle.chileracing.net/',
 )
