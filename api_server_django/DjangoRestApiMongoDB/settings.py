@@ -91,9 +91,14 @@ WSGI_APPLICATION = 'DjangoRestApiMongoDB.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo', # 'django.db.backends.sqlite3',
-        'NAME': 'bezkoder_db',# os.path.join(BASE_DIR, 'db.sqlite3'),
-        'HOST': '127.0.0.1',
-        'PORT': 27017,
+        'NAME': 'WKO_DB', # os.path.join(BASE_DIR, 'db.sqlite3'),
+        
+        'ENFORCE_SCHEMA': False,
+        'CLIENT': {
+            'host': 'mongodb+srv://admin:%21QAZxsw2@puzzle.am9gf.mongodb.net/WKO_DB?retryWrites=true&w=majority',
+        },
+        # 'HOST': '127.0.0.1',
+        # 'PORT': 27017,
     }
 }
 
