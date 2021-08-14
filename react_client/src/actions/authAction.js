@@ -44,7 +44,7 @@ export const doLogin = (dispatch, navigate, loginData) => {
                     payload: user,
                 });
                 if (user.is_active) {
-                    navigate('/settings', {
+                    navigate('/playboard', {
                         replace: true 
                     });
                 } else {
