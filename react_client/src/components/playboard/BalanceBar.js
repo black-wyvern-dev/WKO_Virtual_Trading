@@ -1,3 +1,4 @@
+import React, {useState, useEffect} from 'react';
 import { Box, Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import Grid from '@material-ui/core/Grid';
@@ -20,8 +21,15 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const BalanceBar = () => {
+const BalanceBar = (props) => {
   const classes = useStyles();
+  const [balance, setBalance] = useState(217.15);
+
+  const balanceAmount = props.balanceAmount !== undefined ? props.balanceAmount : -1;
+
+  useEffect(() => {
+    if (balanceAmount !== -1) setBalance(balanceAmount);
+  }, [balanceAmount]);
 
   return (
     <Container maxWidth="lg" className={ classes.container }>
@@ -126,7 +134,7 @@ const BalanceBar = () => {
                   backgroundColor: 'background.lightGray',
                 }}
               >
-                217.15 TC
+                {balance} TC
               </Box>
             </Box>
           </Grid>

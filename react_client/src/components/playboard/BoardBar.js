@@ -1,3 +1,4 @@
+import React, {useState} from 'react';
 import { Box, Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import Grid from '@material-ui/core/Grid';
@@ -33,8 +34,21 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const BoardBar = () => {
+const BoardBar = (props) => {
+  const [creditPaneToggle, setCreditPaneToggle] = useState(false);
+
   const classes = useStyles();
+  const handleBuyButton =
+    ( props.onCreditPaneToggle != undefined ) ?
+    () => {
+      props.onCreditPaneToggle(creditPaneToggle);
+      setCreditPaneToggle(!creditPaneToggle);
+    }
+    :
+    () => {
+      setCreditPaneToggle(!creditPaneToggle);
+      console.log('CreditPaneToggled: ', creditPaneToggle);
+    };
 
   return (
     <Container maxWidth="lg" className={ classes.container }>
@@ -101,6 +115,7 @@ const BoardBar = () => {
                   flex: 0.7,
                   backgroundColor: 'rgb(102,102,102)',
                 }}
+                onClick={handleBuyButton}
               >
                 BUY
               </Button>

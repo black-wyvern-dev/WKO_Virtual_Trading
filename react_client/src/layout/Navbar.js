@@ -68,6 +68,9 @@ const Navbar = (props) => {
             <div
                 className={classes.tab}
                 {...props}
+                onClick={() => {
+                    navigate('/playboard', { replace: false });
+                  }}
             >
                 How to Play
             </div>
@@ -86,6 +89,9 @@ const Navbar = (props) => {
             <div
                 className={classes.tab}
                 {...props}
+                onClick={() => {
+                    navigate('/leaderboard', { replace: false });
+                  }}
             >
                 WKO 100
             </div>

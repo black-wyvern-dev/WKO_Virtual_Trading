@@ -14,12 +14,19 @@ const theme = createTheme({
       red: 'rgb(116,0,0)',
       lightblue: 'rgb(0,201,201)',
       darkblue: 'rgb(19,79,92)',
-      lightblue: 'rgb(69,129,142)',
       paper: colors.common.white
     },
     primary: {
       contrastText: '#ffffff',
       main: 'rgb(0,201,201)'
+    },
+    dark: {
+      contrastText: '#000',
+      main: '#fff',
+    },
+    light: {
+      contrastText: '#fff',
+      main: '#000',
     },
     text: {
       primary: 'rgb(0,201,201)',
@@ -33,6 +40,7 @@ const theme = createTheme({
     }
   },
   shadows,
+  spacing: 8,
   typography
 });
 

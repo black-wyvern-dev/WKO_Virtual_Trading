@@ -20,20 +20,17 @@ export default function authReducer(state = initialState, action) {
                 ...state,
                 loading: true,
             };
-            break;
         case GET_ALL_USERS_SUCCESS:
             return {
                 ...state,
                 loading: false,
                 users: action.payload,
             };
-            break;
         case GET_ALL_USERS_FAIL:
             return {
                 ...state,
                 loading: true,
             };
-            break;
         // case UPDATE_USER_ROLE:
         //     return {
         //         ...state,
@@ -48,7 +45,6 @@ export default function authReducer(state = initialState, action) {
         //             }
         //         })
         //     };
-        //     break;
         default:
             return state;
     }

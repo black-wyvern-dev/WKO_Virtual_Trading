@@ -1,4 +1,4 @@
-import { Box, Container } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import Grid from '@material-ui/core/Grid';
 import InputBase from '@material-ui/core/InputBase';
@@ -69,7 +69,7 @@ const SalesPane = () => {
         spacing={1}
         className={ classes.container }
       >
-        <Grid item className={ classes.cell } xs={1.5} spacing={0}>
+        <Grid item className={ classes.cell } xs={1.5}>
           <Box
             className={classes.block}
             sx={{
@@ -81,7 +81,7 @@ const SalesPane = () => {
             UNIT VALUE
           </Box>
         </Grid>
-        <Grid item className={ classes.cell } xs={1.5} spacing={0}>
+        <Grid item className={ classes.cell } xs={1.5}>
           <Box
             className={classes.block}
             sx={{
@@ -95,7 +95,7 @@ const SalesPane = () => {
             
           </Box>
         </Grid>
-        <Grid item className={ classes.cell } xs={1.5} spacing={0}>
+        <Grid item className={ classes.cell } xs={1.5}>
           <Box
             className={classes.label}
             sx={{
@@ -114,7 +114,7 @@ const SalesPane = () => {
             inputProps={{ 'aria-label': 'naked' }}
           />
         </Grid>
-        <Grid item className={ classes.cell } xs={1.5} spacing={0}>
+        <Grid item className={ classes.cell } xs={1.5}>
           <Box
             className={ classes.label }
             sx={{
@@ -151,7 +151,7 @@ const SalesPane = () => {
             SELL
           </Button>
         </Grid>
-        <Grid item className={ classes.cell } xs={1.5} spacing={0}>
+        <Grid item className={ classes.cell } xs={1.5}>
           <Box
             className={classes.label}
             sx={{
@@ -186,7 +186,7 @@ const SalesPane = () => {
             9.70
           </Box>
         </Grid>
-        <Grid item className={ classes.cell } xs={1.5} spacing={0}>
+        <Grid item className={ classes.cell } xs={1.5}>
           <Box
             className={classes.label}
             sx={{
@@ -211,7 +211,7 @@ const SalesPane = () => {
             38.8
           </Box>
         </Grid>
-        <Grid item className={ classes.cell } xs={1.5} spacing={0}>
+        <Grid item className={ classes.cell } xs={1.5}>
           <Button
             size="medium"
             className={classes.button}
@@ -225,7 +225,7 @@ const SalesPane = () => {
             CONFIRM
           </Button>
         </Grid>
-        <Grid item className={ classes.cell } xs={1.5} spacing={0}>
+        <Grid item className={ classes.cell } xs={1.5}>
           <Box
             className={classes.block}
             sx={{

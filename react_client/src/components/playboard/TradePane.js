@@ -1,7 +1,8 @@
-import { Box, Container } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
+import CCButton from 'src/components/elements/CCButton';
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -36,8 +37,8 @@ const useStyles = makeStyles(theme => ({
   button: {
     color: 'white',
     width: '100%',
-    height: '50px',
-    display: 'flex',
+    height: '50px !important',
+    display: 'flex !important',
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: '0 !important',
@@ -52,8 +53,13 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const TradePane = () => {
+const TradePane = (props) => {
   const classes = useStyles();
+
+  const handlePauseBtnClicked = () => {
+    if(props.onPaused !== undefined) props.onPaused();
+    console.log('paused');
+  }
 
   return (
       <Grid
@@ -61,7 +67,7 @@ const TradePane = () => {
         spacing={1}
         className={ classes.container }
       >
-        <Grid item className={ classes.cell } xs={1.5} spacing={0}>
+        <Grid item className={ classes.cell } xs={1.5} >
           <Box
             className={ classes.button }
             sx={{
@@ -73,21 +79,25 @@ const TradePane = () => {
           >
             1.31
           </Box>
-          <Button
-            size="medium"
+          <CCButton
             className={classes.button}
             style={{
-              color: 'white',
-              padding: '0 !important',
-              border: '1px solid rgb(82,82,82)',
-              backgroundColor: 'rgb(116,0,0)',
+              padding: '0',
+              maxWidth: '100% !important',
             }}
-          >
-            PAUSE
-          </Button>
+            containerStyle={{
+              border: '1px solid white',
+              borderColor: 'border.lightgray',
+            }}
+            color={'text.white'}
+            backgroundColor={'background.red'}
+            text="PAUSE"
+            falshTime='1s'
+            onClick={handlePauseBtnClicked}
+          />
         </Grid>
-        <Grid item className={ classes.cell } xs spacing={0} />
-        <Grid item className={ classes.cell } xs={1.5} spacing={0}>
+        <Grid item className={ classes.cell } xs  />
+        <Grid item className={ classes.cell } xs={1.5} >
           <Box
             className={ classes.button }
             sx={{
@@ -111,7 +121,7 @@ const TradePane = () => {
             116.64
           </Box>
         </Grid>
-        <Grid item className={ classes.cell } xs={1.5} spacing={0}>
+        <Grid item className={ classes.cell } xs={1.5} >
           <Box
             className={ classes.button }
             sx={{
@@ -135,7 +145,7 @@ const TradePane = () => {
             0.45
           </Box>
         </Grid>
-        <Grid item className={ classes.cell } xs={1.5} spacing={0}>
+        <Grid item className={ classes.cell } xs={1.5} >
           <Box
             className={ classes.button }
             sx={{
@@ -159,8 +169,8 @@ const TradePane = () => {
             116.92
           </Box>
         </Grid>
-        <Grid item className={ classes.cell } xs spacing={0} />
-        <Grid item className={ classes.cell } xs={1.5} spacing={0}>
+        <Grid item className={ classes.cell } xs  />
+        <Grid item className={ classes.cell } xs={1.5} >
           <Box
             className={ classes.button }
             sx={{
@@ -172,18 +182,23 @@ const TradePane = () => {
           >
             31.43
           </Box>
-          <Button
-            size="medium"
+          <CCButton
             className={classes.button}
             style={{
-              color: 'white',
-              padding: '0 !important',
-              border: '1px solid rgb(82,82,82)',
-              backgroundColor: 'rgb(19,79,92)',
+              padding: '0',
+              maxWidth: '100% !important',
             }}
-          >
-            PLAY
-          </Button>
+            containerStyle={{
+              border: '1px solid white',
+              borderColor: 'border.lightgray',
+            }}
+            color={'text.white'}
+            backgroundColor={'background.lightblue'}
+            text="PLAY"
+            falshTime='1s'
+            theme="light"
+            // onClick={handlePauseBtnClicked}
+          />
         </Grid>
 
       </Grid>

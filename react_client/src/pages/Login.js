@@ -2,7 +2,7 @@ import { Component } from 'react';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import * as Yup from 'yup';
-import { connect, Formik } from 'formik';
+import { Formik } from 'formik';
 import {
   Box,
   Button,
@@ -11,7 +11,7 @@ import {
   TextField,
   Typography
 } from '@material-ui/core';
-import { useDispatch, useSelector } from 'react-redux';
+// import { useDispatch, useSelector } from 'react-redux';
 import { doLogin } from 'src/actions/authAction';
 
 import store from 'src/store';

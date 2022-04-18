@@ -1,5 +1,5 @@
-import { createStyles } from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
+// import {  } from '@material-ui/core';
+import { makeStyles, createStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles(() => createStyles({
   '@global': {
@@ -30,6 +30,11 @@ const useStyles = makeStyles(() => createStyles({
       '&:-internal-autofill-selected' : {
         backgroundColor: 'rgb(32,32,32) !important',      
       } 
+    },
+    '.MuiMenu-list': {
+      backgroundColor: 'rgb(102, 102, 102) !important',
+      border: '1px solid rgb(82, 82, 82) !important',
+      padding: '0 !important',
     }
   }
 }));

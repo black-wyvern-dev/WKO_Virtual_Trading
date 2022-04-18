@@ -1,15 +1,12 @@
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import {
   Box,
-  Container,
   Grid,
-  Button,
-  Avatar,
 } from '@material-ui/core';
 
 const LP = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   return (
     <>

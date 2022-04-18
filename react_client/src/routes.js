@@ -5,6 +5,7 @@ import NotFound from 'src/pages/NotFound';
 import Register from 'src/pages/Register';
 import Settings from 'src/pages/Settings';
 import PlayBoard from 'src/pages/PlayBoard';
+import LeaderBoard from 'src/pages/LeaderBoard';
 import LP from 'src/pages/LP';
 
 const routes = [
@@ -18,6 +19,7 @@ const routes = [
       { path: 'dashboard', element: <Navigate to="/settings" /> },
       { path: 'settings', element: <Settings /> },
       { path: 'playboard', element: <PlayBoard /> },
+      { path: 'leaderboard', element: <LeaderBoard /> },
       { path: '404', element: <NotFound /> },
     ]
   },
