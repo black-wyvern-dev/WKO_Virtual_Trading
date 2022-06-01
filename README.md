@@ -7,7 +7,7 @@ financial trading with the mechanics of traditional
 games of chance.
 
 # Author
-Denis Tuktarov
+Alex
 
 # Owner
 World Knockout Ltd
